@@ -52,24 +52,64 @@ export default function App() {
 "Қуаныш пен береке бірге келсін!",
 "Наурыз сізге молшылық әкелсін!",
 "Ұлыс оң болсын!"
-]
+];
 
   const [message, setMessage] = useState("");
+  const [animate, setAnimate] = useState(false);
 
-  const generateMessage = () => {
-    const randomIndex = Math.floor(Math.random() * messages.length);
-    setMessage(messages[randomIndex]);
+  const takeBata = () => {
+    const index = Math.floor(Math.random() * messages.length);
+    setMessage(messages[index]);
+    setAnimate(true);
+    setTimeout(() => setAnimate(false), 1000);
   };
 
   return (
-    <div style={{textAlign:"center", marginTop:"100px"}}>
-      <h1>Random Message</h1>
+    <div
+  className="min-h-screen flex flex-col items-center justify-center p-6"
+  style={{
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/bg.png"})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    color: "#6F8DB9", // Set text color
+  }}
+>
+  <h1 className="text-4xl font-bold">Сізге арналған</h1>
 
-      <p>{message || "Click the button to receive a message"}</p>
+  {/* Use Philosopher font for this word */}
+  <h1
+  className=""
+  style={{
+    fontFamily: "Philosopher, sans-serif",
+    fontSize: "120px",
+    background: "linear-gradient(to bottom, #FFC917, #CD9B11)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    textAlign: "center",
+  }}
+>
+  БАТА
+</h1>
 
-      <button onClick={generateMessage}>
-        Get Message
-      </button>
-    </div>
+  <div
+    className={`w-full max-w-md p-6 mb-8 text-center bg-white/70 backdrop-blur-sm rounded-xl border border-yellow-300 shadow-lg transition-transform duration-500 ${
+      animate ? "scale-105" : "scale-100"
+    }`}
+    style={{
+      color: "#335A96",
+      fontSize: "22px"
+    }}
+  >
+    {message || "Батаны алу үшін төмендегі қолды басыңыз"}
+  </div>
+
+  <div
+    onClick={takeBata}
+    className="text-6xl cursor-pointer select-none hover:scale-125 transition-transform duration-300 animate-bounce"
+  >
+    🤲🏻
+  </div>
+</div>
   );
 }
