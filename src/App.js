@@ -94,7 +94,7 @@ export default function App() {
 </h1>
 
   <div
-    className={`w-full max-w-md p-6 mb-8 text-center bg-white/70 backdrop-blur-sm rounded-xl border border-yellow-300 shadow-lg transition-transform duration-500 ${
+    className={`w-full max-w-md p-6 mb-8 text-center bg-white/60 backdrop-blur-sm rounded-xl border border-yellow-300 shadow-lg transition-transform duration-500 ${
       animate ? "scale-105" : "scale-100"
     }`}
     style={{
