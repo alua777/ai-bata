@@ -79,7 +79,7 @@ export default function App() {
 
   {/* Use Philosopher font for this word */}
   <h1
-  className=""
+  className="mb-10"
   style={{
     fontFamily: "Philosopher, sans-serif",
     fontSize: "120px",
@@ -87,6 +87,7 @@ export default function App() {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     textAlign: "center",
+    lineHeight: "100px"
   }}
 >
   БАТА
@@ -107,6 +108,9 @@ export default function App() {
   <div
     onClick={takeBata}
     className="text-6xl cursor-pointer select-none hover:scale-125 transition-transform duration-300 animate-bounce"
+    style={{
+      fontSize: "100px"
+    }}
   >
     🤲🏻
   </div>
