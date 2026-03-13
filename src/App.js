@@ -66,7 +66,7 @@ export default function App() {
 
   return (
     <div
-  className="min-h-screen flex flex-col items-center justify-center p-6"
+  className="min-h-screen flex flex-col items-center justify-center p-6 pt-20"
   style={{
     backgroundImage: `url(${process.env.PUBLIC_URL + "/bg.png"})`,
     backgroundSize: "cover",
